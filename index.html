@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naves Icónicas de Star Wars</title>
+    <link rel="stylesheet" href="css/indexStyles.css">
+</head>
+<body>
+    <header>
+        <h1>Naves Iconicas de StarWars</h1>
+    </header>
+
+    <main id="ships-container">
+        <!-- Las tarjetas de naves se cargarán aquí dinámicamente -->
+    </main>
+
+    <nav class="menu">
+        <button class="menu-item active" data-page="home">
+            <img src="assets/ri_home-fill.svg" alt="Inicio">
+        </button>
+        <button class="menu-item" data-page="rebellion">
+            <img src="assets/Rebel_Alliance_logo.svg" alt="Rebelión">
+        </button>
+        <button class="menu-item" data-page="empire">
+            <img src="assets/Emblem_of_the_First_Galactic_Empire.svg" alt="Imperio">
+        </button>
+        <button class="menu-item" data-page="dice">
+            <img src="assets/random-selector-icon.svg" alt="Aleatorio">
+        </button>
+        <button class="menu-item" data-page="profile">
+            <img src="assets/mdi_account.svg" alt="Perfil">
+        </button>
+    </nav>
+
+    <!-- Template para las tarjetas de naves -->
+    <template id="ship-card-template">
+        <div class="ship-card">
+            <div class="ship-image">
+                <p>Imagen de la nave</p>
+            </div>
+            <div class="ship-info">
+                <h2 class="ship-name">Nombre de la nave.</h2>
+                <p class="ship-class">Clase de la nave:</p>
+                <p class="ship-cost">Creditos de costo:</p>
+            </div>
+        </div>
+    </template>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
