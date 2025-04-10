@@ -21,7 +21,9 @@ const shipsContainer = document.getElementById('ships-container');
 // Template para las tarjetas de naves
 const shipCardTemplate = document.getElementById('ship-card-template');
 // Botones del menú
-const menuButtons = document.querySelectorAll('.menu-item');
+const menuButtons = document.querySelectorAll('.menu .button');
+// Page order corresponding to the buttons in the menu
+const pages = ['home', 'rebellion', 'empire', 'dice', 'profile'];
 
 // Función para cargar una nave específica por su ID
 async function loadShip(shipId) {
@@ -102,9 +104,11 @@ function getRandomShips(count) {
 // Función para manejar los clics en los botones del menú
 function handleMenuClick(event) {
     const button = event.currentTarget;
-    const category = button.dataset.page;
+    // Determine the index of the clicked button and use it to get the page category
+    const index = Array.from(menuButtons).indexOf(button);
+    const category = pages[index];
     
-    // Actualizar la clase active en los botones
+    // Actualizar la clase active en los botones:
     menuButtons.forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
     
